@@ -71,8 +71,8 @@ class CountVectorizer:
         if isinstance(document[0], list):
             document = document[0]
         self.vocabulary = self.extend_list(map(self.process_text, document))
-        x = self.create_corpus_matrix(document)
-        return x  # можно сразу
+
+        return self.create_corpus_matrix(document)
 
     def get_feature_names(self):
 
@@ -82,6 +82,7 @@ class CountVectorizer:
 
         if self.vocabulary is None:
             raise Warning('No fitted vocabulary provided')
+            
         return self.vocabulary
 
 
