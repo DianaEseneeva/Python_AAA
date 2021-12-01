@@ -1,0 +1,3 @@
+В PyCharm: Process finished with exit code 0
+
+Через cmd: пустой вывод
