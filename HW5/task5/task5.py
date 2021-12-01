@@ -1,5 +1,4 @@
 import urllib.request
-from urllib.error import URLError
 import json
 import pytest
 from unittest.mock import patch
