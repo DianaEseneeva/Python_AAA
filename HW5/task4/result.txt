@@ -1,0 +1,15 @@
+C:\Users\Diana\Desktop\AAA\Python\HW5\task4>python -m pytest -v task4.py
+====================================================================================== test session starts =======================================================================================
+platform win32 -- Python 3.8.10, pytest-6.2.5, py-1.11.0, pluggy-1.0.0 -- C:\Users\Diana\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Diana\Desktop\AAA\Python\HW5\task4
+plugins: cov-3.0.0
+collected 5 items
+
+task4.py::test_output[test0-output0] PASSED                                                                                                                                                 [ 20%]
+task4.py::test_output[test1-output1] PASSED                                                                                                                                                 [ 40%]
+task4.py::test_output[test2-output2] PASSED                                                                                                                                                 [ 60%]
+task4.py::test_output[test3-output3] PASSED                                                                                                                                                 [ 80%]
+task4.py::test_exception PASSED                                                                                                                                                             [100%]
+
+======================================================================================= 5 passed in 0.22s ========================================================================================
