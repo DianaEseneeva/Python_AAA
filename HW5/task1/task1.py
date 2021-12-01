@@ -28,7 +28,7 @@ MORSE_TO_LETTER = {
 
 def encode(message: str) -> str:
     """
-    Кодирует строку в соответсвии с таблицей азбуки Морзе 
+    Кодирует строку в соответсвии с таблицей азбуки Морзе
 
     >>> encode('SOS')
     '... --- ...'
@@ -48,4 +48,5 @@ def encode(message: str) -> str:
     return ' '.join(encoded_signs)
 
 
-
+if __name__ == '__main__':
+    doctest.testmod()
