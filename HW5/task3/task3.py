@@ -3,7 +3,7 @@ import unittest
 from unittest import TestCase
 
 
-def fit_transform(*args: str) -> List[Tuple[str, List[int]]]:
+def fit_transform(*args: List[str]) -> List[Tuple[str, List[int]]]:
     """
     fit_transform(iterable)
     fit_transform(arg1, arg2, *args)
@@ -67,4 +67,3 @@ class Test(TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
