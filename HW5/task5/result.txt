@@ -1,0 +1,31 @@
+C:\Users\Diana\Desktop\AAA\Python\HW5\task5>python -m pytest -v task5.py --cov
+====================================================================================== test session starts =======================================================================================
+platform win32 -- Python 3.8.10, pytest-6.2.5, py-1.11.0, pluggy-1.0.0 -- C:\Users\Diana\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Diana\Desktop\AAA\Python\HW5\task5
+plugins: cov-3.0.0
+collected 1 item
+
+task5.py::test_conn PASSED                                                                                                                                                                  [100%]
+
+---------- coverage: platform win32, python 3.8.10-final-0 -----------
+Name       Stmts   Miss  Cover
+------------------------------
+task5.py      42      0   100%
+------------------------------
+TOTAL         42      0   100%
+
+
+======================================================================================= 1 passed in 0.63s ========================================================================================
+
+C:\Users\Diana\Desktop\AAA\Python\HW5\task5>python -m pytest -v task5.py --cov-report html
+====================================================================================== test session starts =======================================================================================
+platform win32 -- Python 3.8.10, pytest-6.2.5, py-1.11.0, pluggy-1.0.0 -- C:\Users\Diana\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Diana\Desktop\AAA\Python\HW5\task5
+plugins: cov-3.0.0
+collected 1 item
+
+task5.py::test_conn PASSED                                                                                                                                                                  [100%]
+
+======================================================================================= 1 passed in 0.33s ========================================================================================
