@@ -33,7 +33,8 @@ def encode(message: str) -> str:
     >>> encode('SOS')
     '... --- ...'
     >>> encode('HELLO-DIANA-HOW-ARE-YOU?')
-    '.... . .-.. .-.. --- -....- -.. .. .- -. .- -....- .... --- .-- -....- .- .-. . -....- -.-- --- ..- ..--..'
+    '.... . .-.. .-.. --- -....- -.. .. .- -. .- -....- ....
+    --- .-- -....- .- .-. . -....- -.-- --- ..- ..--..'
     >>> encode('SIMPLE-TEST-FOR-DOCTEST-W-ELLIPSIS') #doctest: +ELLIPSIS
     '... .. -- .--. .-.. . -....- - . ... - -....-.. .. .--. ... .. ...'
     >>> encode(1)
@@ -50,3 +51,4 @@ def encode(message: str) -> str:
 
 if __name__ == '__main__':
     doctest.testmod()
+
