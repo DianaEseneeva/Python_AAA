@@ -1,3 +1,46 @@
-В PyCharm: Process finished with exit code 0
+C:\Users\Diana\Desktop\AAA\Python\HW5\task1>python -m doctest -v -o NORMALIZE_WHITESPACE task1.py
+Trying:
+    encode('SOS')
+Expecting:
+    '... --- ...'
+ok
+Trying:
+    encode('HELLO-DIANA-HOW-ARE-YOU?')
+Expecting:
+    '.... . .-.. .-.. --- -....- -.. .. .- -. .- -....- ....
+    --- .-- -....- .- .-. . -....- -.-- --- ..- ..--..'
+ok
+Trying:
+    encode('SIMPLE-TEST-FOR-DOCTEST-W-ELLIPSIS') #doctest: +ELLIPSIS
+Expecting:
+    '... .. -- .--. .-.. . -....- - . ... - -....-.. .. .--. ... .. ...'
+ok
+Trying:
+    encode(1)
+Expecting:
+    Traceback (most recent call last):
+    ...
+    TypeError: 'int' object is not iterable
+ok
+1 items had no tests:
+    task1
+1 items passed all tests:
+   4 tests in task1.encode
+4 tests in 2 items.
+4 passed and 0 failed.
+Test passed.
 
-Через cmd: пустой вывод
+C:\Users\Diana\Desktop\AAA\Python\HW5\task1>python task1.py
+**********************************************************************
+File "task1.py", line 35, in __main__.encode
+Failed example:
+    encode('HELLO-DIANA-HOW-ARE-YOU?')
+Expected:
+    '.... . .-.. .-.. --- -....- -.. .. .- -. .- -....- ....
+    --- .-- -....- .- .-. . -....- -.-- --- ..- ..--..'
+Got:
+    '.... . .-.. .-.. --- -....- -.. .. .- -. .- -....- .... --- .-- -....- .- .-. . -....- -.-- --- ..- ..--..'
+**********************************************************************
+1 items had failures:
+   1 of   4 in __main__.encode
+***Test Failed*** 1 failures.
