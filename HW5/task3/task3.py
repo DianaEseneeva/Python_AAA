@@ -55,11 +55,12 @@ class Test(TestCase):
         self.assertEqual(fit_transform(test3), output3)
         self.assertEqual(fit_transform(test4), output4)
 
-    def test_exception(self):
+    def test_type_error_empty_input(self):
         with self.assertRaises(TypeError) as msg1:
             fit_transform()
         self.assertTrue('expected at least 1 arguments, got 0' in str(msg1.exception))
 
+    def test_type_error_common(self):
         with self.assertRaises(TypeError) as msg2:
             fit_transform(1, 2, 3)
         self.assertFalse('expected at least 1 arguments, got 0' in str(msg2.exception))
