@@ -34,30 +34,56 @@ def what_is_year_now() -> int:
     else:
         raise ValueError('Invalid format')
 
-    return int(year_str)
+    return int(year_str) 
 
 
-def test_conn():
-    json_test1 = """{"currentDateTime":"2021-12-01"}"""
-    with patch.object(urllib.request, 'urlopen', return_value=io.StringIO(json_test1)) :
-        test1 = what_is_year_now()
-    output1 = 2021
-    assert test1 == output1
+def test_separator_1():
+    json_test = """{"currentDateTime":"2021-12-01"}"""
+    with patch.object(urllib.request, 'urlopen', return_value=io.StringIO(json_test)):
+        test = what_is_year_now()
+    output = 2021
+    assert test == output
 
-    json_test2 = """{"currentDateTime":"01.01.2021"}"""
-    with patch.object(urllib.request, 'urlopen', return_value=io.StringIO(json_test2)) :
-        test2 = what_is_year_now()
-    output2 = 2021
-    assert test2 == output2
 
-    json_test3 = """{"currentDateTime":"11 12 13 14"}"""
-    with patch.object(urllib.request, 'urlopen', return_value=io.StringIO(json_test3)):
+def test_separator_2():
+    json_test = """{"currentDateTime":"01.01.2021"}"""
+    with patch.object(urllib.request, 'urlopen', return_value=io.StringIO(json_test)):
+        test = what_is_year_now()
+    output = 2021
+    assert test == output
+
+
+def test_no_needed_separator():
+    json_test = """{"currentDateTime":"11 12 13 14"}"""
+    with patch.object(urllib.request, 'urlopen', return_value=io.StringIO(json_test)):
         with pytest.raises(ValueError):
             what_is_year_now()
 
-    json_test4 = """{"currentDateTime":11}"""
-    with patch.object(urllib.request, 'urlopen', return_value=io.StringIO(json_test4)):
+
+def test_wrong_type_of_input():
+    json_test = """{"currentDateTime":11}"""
+    with patch.object(urllib.request, 'urlopen', return_value=io.StringIO(json_test)):
         with pytest.raises(TypeError):
             what_is_year_now()
 
+
+def test_incorrect_json():
+    json_test = """{}"""
+    with patch.object(urllib.request, 'urlopen', return_value=io.StringIO(json_test)):
+        with pytest.raises(KeyError):
+            what_is_year_now()
+
+
+def test_correct_separator_1_exception():
+    json_test = """{currentDateTime":"abcd-}"""
+    with patch.object(urllib.request, 'urlopen', return_value=io.StringIO(json_test)):
+        with pytest.raises(ValueError):
+            what_is_year_now()
+
+
+def test_correct_separator_2_exception():
+    json_test = """{currentDateTime":"dd.mm.year}"""
+    with patch.object(urllib.request, 'urlopen', return_value=io.StringIO(json_test)):
+        with pytest.raises(ValueError):
+            what_is_year_now()
 
